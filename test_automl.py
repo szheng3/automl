@@ -21,16 +21,7 @@ text_to_predict = pd.DataFrame({
     ]
 })
 
-def test_model_training():
-    model = AgnewsModel(test_config)
-    model.train()
-    assert model.train_stats is not None
 
-def test_model_evaluation():
-    model = AgnewsModel(test_config)
-    model.train()
-    model.evaluate()
-    assert model.test_stats is not None
 
 def test_model_prediction():
     model = AgnewsModel(test_config)

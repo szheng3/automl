@@ -7,7 +7,7 @@ with open("requirements.txt") as f:
 from setuptools import setup
 
 setup(
-    name='openai_whisper_cli',
+    name='automl',
     version='1.0.0',
     packages=find_packages(),
     entry_points="""
