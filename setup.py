@@ -14,9 +14,9 @@ setup(
     [console_scripts]
     whisper=wisper.models:audioToText
     """,
-    url="https://github.com/szheng3/openai_whisper_cli",
+    url="https://github.com/szheng3/automl",
     license='',
     author='Shuai Zheng',
     author_email='szheng3@outlook.com',
-    description='voice to text'
+    description='automl'
 )
