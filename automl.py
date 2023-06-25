@@ -70,5 +70,4 @@ if __name__ == '__main__':
     })
 
     predictions = model.predict(text_to_predict)
-
     print(predictions)
