@@ -17,4 +17,7 @@ lint:
 test:
 	pytest
 
+gen:
+	ludwig export_torchscript -m=results/api_experiment_run/model -op=model/
+
 all: install lint test

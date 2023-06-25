@@ -6,8 +6,6 @@ import json
 from ludwig.utils.inference_utils import to_inference_module_input_from_dataframe
 
 if __name__ == '__main__':
-
-
     text_to_predict = pd.DataFrame({
         "title": [
             "Google may spur cloud cybersecurity M&A with $5.4B Mandiant buy",
@@ -20,13 +18,11 @@ if __name__ == '__main__':
     # output_df = inference_module.predict(text_to_predict)
     scripted_module = torch.jit.script(inference_module)
 
-    with open( f"./model/model_hyperparameters.json") as f:
+    with open(f"./model/model_hyperparameters.json") as f:
         config = json.load(f)
 
     input_sample_dict = to_inference_module_input_from_dataframe(text_to_predict, config)
     # output_df = scripted_module.predict(text_to_predict)
+    output_df = scripted_module(input_sample_dict)
 
-    print(scripted_module(input_sample_dict))
-
-
-
+    print(output_df)

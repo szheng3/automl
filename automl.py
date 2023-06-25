@@ -2,7 +2,6 @@ import logging
 import pandas as pd
 from ludwig.api import LudwigModel
 from ludwig.datasets import agnews
-from ludwig.visualize import confusion_matrix, learning_curves
 
 
 class AgnewsModel:
@@ -30,8 +29,6 @@ class AgnewsModel:
 
 
 if __name__ == '__main__':
-
-
     config = {
         "input_features": [
             {
@@ -53,13 +50,11 @@ if __name__ == '__main__':
         }
     }
 
-
     model = AgnewsModel(config)
 
     model.train()
 
     model.evaluate()
-
 
     text_to_predict = pd.DataFrame({
         "title": [
