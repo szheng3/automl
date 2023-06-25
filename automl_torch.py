@@ -16,11 +16,11 @@ if __name__ == '__main__':
         ]
     })
 
-    inference_module = InferenceModule.from_directory('./results/api_experiment_run/model/')
+    inference_module = InferenceModule.from_directory('./model/')
     # output_df = inference_module.predict(text_to_predict)
     scripted_module = torch.jit.script(inference_module)
 
-    with open( f"results/api_experiment_run/model/model_hyperparameters.json") as f:
+    with open( f"./model/model_hyperparameters.json") as f:
         config = json.load(f)
 
     input_sample_dict = to_inference_module_input_from_dataframe(text_to_predict, config)
