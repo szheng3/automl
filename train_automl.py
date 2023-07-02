@@ -38,13 +38,11 @@ class AgnewsModel:
     "--data-path",
     type=click.Path(exists=True),
     help="data file path",
-    required=True,
 )
 @click.option(
     "--config-path",
     type=click.Path(exists=True),
     help="Path config file",
-    required=True,
 )
 def main(data_path, config_path):
     if data_path is None:
