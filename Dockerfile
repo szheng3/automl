@@ -22,6 +22,6 @@ RUN make test
 
 # Set the command to run when the container starts
 #ENTRYPOINT ["python","train_automl.py","--path"]
-ENTRYPOINT ["python","automl.py","--path"]
+ENTRYPOINT ["python","predict_automl_torch.py","--predict-path"]
 #CMD ["/app/audio/audio.mp3"]
-#CMD ["audio.mp3"]
+CMD ["./data/text_to_predict.csv"]
