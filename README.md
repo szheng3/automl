@@ -1,4 +1,5 @@
-Sure, I can revise the README to reflect the usage of a `requirements.txt` file for dependency management. Here is an updated version:
+[![Tests](https://github.com/szheng3/automl/actions/workflows/python-app.yml/badge.svg)](https://github.com/szheng3/automl/actions/workflows/python-app.yml)
+[![Publish](https://github.com/szheng3/automl/actions/workflows/publish.yml/badge.svg)](https://github.com/szheng3/automl/actions/workflows/publish.yml)
 
 # AutoML Project with Ludwig
 
