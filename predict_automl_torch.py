@@ -2,18 +2,19 @@ import torch
 import pandas as pd
 from ludwig.models.inference import InferenceModule
 import json
+import click
 
 from ludwig.utils.inference_utils import to_inference_module_input_from_dataframe
 
-if __name__ == '__main__':
-    text_to_predict = pd.DataFrame({
-        "title": [
-            "Google may spur cloud cybersecurity M&A with $5.4B Mandiant buy",
-            "Europe struggles to meet mounting needs of Ukraine's fleeing millions",
-            "How the pandemic housing market spurred buyer's remorse across America",
-        ]
-    })
-
+@click.command()
+@click.option(
+    "--predict-path",
+    type=click.Path(exists=True),
+    help="data file path",
+    required=True,
+)
+def main(predict_path):
+    text_to_predict=pd.read_csv(predict_path)
     inference_module = InferenceModule.from_directory('./model/')
     # output_df = inference_module.predict(text_to_predict)
     scripted_module = torch.jit.script(inference_module)
@@ -26,3 +27,10 @@ if __name__ == '__main__':
     output_df = scripted_module(input_sample_dict)
 
     print(output_df)
+
+
+
+
+
+if __name__ == '__main__':
+    main()

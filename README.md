@@ -46,12 +46,21 @@ How to run the code to train a model:
 python train_automl.py --data-path ./data/agnews.csv --config-path ./config/config.json
 ```
 
+
+And to generate with a pytorch model:
+
+
+```bash
+make gen
+```
+
+
 And to predict with a pre-trained model:
 
 
 ```bash
 
-python predict_automl.py 
+python predict_automl_torch.py --predict-path ./data/text_to_predict.csv
 
 ```
 
