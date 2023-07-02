@@ -21,7 +21,7 @@ RUN make test
 #VOLUME /app/audio
 
 # Set the command to run when the container starts
-#ENTRYPOINT ["python","automl.py","--path"]
+#ENTRYPOINT ["python","train_automl.py","--path"]
 ENTRYPOINT ["python","automl.py","--path"]
 #CMD ["/app/audio/audio.mp3"]
 #CMD ["audio.mp3"]

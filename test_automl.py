@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from automl import AgnewsModel
+from train_automl import AgnewsModel
 
 # Test configuration
 test_config = {
