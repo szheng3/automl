@@ -1,5 +1,6 @@
 import pandas as pd
 import pytest
+from ludwig.datasets import agnews
 
 from train_automl import AgnewsModel
 
@@ -24,7 +25,9 @@ text_to_predict = pd.DataFrame({
 
 
 def test_model_prediction():
-    model = AgnewsModel(test_config)
+    train_df, test_df, _ = agnews.load(split=True)
+
+    model = AgnewsModel(test_config, train_df=train_df, test_df=test_df)
     model.train()
     predictions = model.predict(text_to_predict)
     assert predictions is not None
